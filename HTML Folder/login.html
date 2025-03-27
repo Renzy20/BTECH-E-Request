@@ -4,13 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="img/btechIcon.png">
-
     <title>E-Request Log in</title>
+
+    <link rel="icon" type="image/png"
+        href="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\img\btechIcon.png">
+    <link rel="stylesheet"
+        href="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\CSS Folder\Login Css Folder\login.css">
 </head>
 
 <body>
+    <div class="container">
+        <!-- Section for Logo -->
+        <div class="logo-container">
+            <img src="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\img\BtechLogo.png" class="img-size">
+            <h3>DALUBHASAANG POLITEKNIKO</h3>
+            <h3>NG</h3>
+            <h3>LUNGSOD NG BALIWAG</h3>
 
+        </div>
+        <!-- Section for Log in -->
+        <div class="login-container">
+            <div class="log-container">
+                <div class="tab-menu">
+                    <button class="tab active" onclick="showtab('student')">Student</button>
+                    <button class="tab" onclick="showtab('alumni')">Alumni</button>
+                </div>
+
+                <!-- Form Container For Student -->
+                <div class="form-container">
+                    <form id="student-form" class="form active">
+                        <label for="email">Btech Gsuit Account:</label>
+                        <input type="text" id="email" placeholder="studentnumber@btech.ph.education">
+
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="password">
+
+                        <div class="links">
+                            <a href="#">Forgot your password?</a>
+                            <a href="#">Don't have an account?</a>
+                        </div>
+
+                        <div class="center">
+                            <button class="login-btn">Log In</button>
+                        </div>
+                    </form>
+
+                    <!-- Section of Alumni Log in Form -->
+                    <form id="alumni-form" class="form">
+                        <label for="username-alumni">Student Number:</label>
+                        <input type="text" id="username-alumni" placeholder="student number">
+
+                        <label for="password-alumni">Password</label>
+                        <input type="password" id="password-alumni" placeholder="password">
+
+                        <div class="links">
+                            <a href="#">Forgot your password?</a>
+                            <a href="#">Don't have an account?</a>
+                        </div>
+
+                        <div class="center">
+                            <button class="login-btn">Log In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="left">
+                <p>Are you a admin? Click <span>here</span></p>
+            </div>
+            <p class="txt-size">© 2025 Baliwag Polytechnic College. Online Document Request System</p>
+        </div>
+    </div>
+    <script
+        src="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\JS Folder\Login Script\changetab.js"></script>
 </body>
 
 </html>
