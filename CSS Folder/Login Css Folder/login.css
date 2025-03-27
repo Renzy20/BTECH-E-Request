@@ -14,8 +14,6 @@ body {
 }
 
 .container {
-    border: 1px solid yellow;
-
     height: 99.5%;
     width: 100%;
 
@@ -49,10 +47,9 @@ h3 {
 }
 
 .login-container {
-    height: 99.5%;
+    height: 100.5%;
     width: 105vh;
 
-    border: 1px solid greenyellow;
     background-color: #F6FFF1;
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
@@ -65,10 +62,8 @@ h3 {
 }
 
 .log-container {
-    /* height: 100px;
-    width: 100%; */
+    margin: 10px;
 
-    /* border: 1px solid gray; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,7 +77,7 @@ h3 {
     border-top-right-radius: 10px;
 
     background-color: #F5F5F5;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
     padding: 40px;
     width: 100%;
     text-align: center;
@@ -94,6 +89,7 @@ h3 {
     background: transparent;
     padding: 10px;
     font-size: 32px;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
     font-weight: bold;
 }
@@ -105,7 +101,7 @@ h3 {
 
 .form-container {
     background-color: #fcfcfc;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
     padding: 40px;
     width: 100%;
     text-align: center;
@@ -179,18 +175,74 @@ input {
 }
 
 p {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: normal;
+    margin-bottom: 15px;
 }
 
 
 span {
     color: #4CAF50;
     cursor: pointer;
+
+}
+
+a {
+    text-decoration: none;
 }
 
 .txt-size {
     font-size: 12px;
     margin: 0;
     padding: 0;
+}
+
+/* 🔥 RESPONSIVENESS 🔥 */
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .logo-container {
+        width: 100%;
+    }
+
+    .login-container {
+        width: 95%;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    .tab {
+        font-size: 1rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .links {
+        font-size: 0.8rem;
+    }
+
+    .login-btn {
+        font-size: 0.9rem;
+    }
+
+    .txt-size {
+        font-size: 0.7rem;
+    }
+
+    .left {
+        width: 85%;
+    }
 }

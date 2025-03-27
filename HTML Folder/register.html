@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Request Register</title>
+
+    <link rel="icon" type="image/png"
+        href="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\img\btechIcon.png">
+    <link rel="stylesheet"
+        href="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\CSS Folder\Register Css Folder\register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\img\BtechLogo.png" class="logo-size">
+        <div class="txt-center">
+            <p>BTECH ONLINE DOCUMENT REQUEST SYSTEM</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="person-section">
+            <div class="group-form">
+                <button class="tab active" onclick="showtab('student')">Student</button>
+                <button class="tab" onclick="showtab('alumni')">Alumni</button>
+                <button>Staff</button>
+            </div>
+        </div>
+
+        <div class="personregister-form">
+            <!-- Student Registration Form -->
+            <div class="studentreg-form" style="display: block;">
+                <h2>STUDENT REGISTRATION FORM</h2>
+
+                <form class="contain">
+                    <div class="input-group">
+                        <div class="inputfield">
+                            <label for="fullname">Full Name:</label>
+                            <input type="text" placeholder="Full Name">
+
+                            <label for="gsuit">Gsuit Account:</label>
+                            <input type="email" placeholder="studentnumber@btech.ph.education">
+
+                            <label for="program">Program Course:</label>
+                            <input type="text" placeholder="Course Name">
+
+                            <label for="studentnum">Student Number:</label>
+                            <input type="text" placeholder="12345678">
+
+                            <label for="address">Address & Zip Code:</label>
+                            <input type="text" placeholder="City, Zip Code">
+
+                            <label for="birthdate">Birth Date:</label>
+                            <div class="birth-fields">
+                                <input type="text" placeholder="Month">
+                                <input type="text" placeholder="Day">
+                                <input type="text" placeholder="Year">
+                            </div>
+                        </div>
+
+                        <div class="inputfield">
+                            <label for="academicyear">A.Y:</label>
+                            <input type="text" placeholder="2008-2012">
+
+                            <label for="yearlevel">Year Level:</label>
+                            <input type="text" placeholder="e.g. 1st Year">
+
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" placeholder="09123456789">
+
+                            <label for="password">Create Password:</label>
+                            <input type="password" placeholder="Enter Password">
+
+                            <label for="confirmpass">Confirm Password:</label>
+                            <input type="password" placeholder="Confirm Password">
+                        </div>
+                    </div>
+
+                    <button class="register-btn">Register</button>
+                </form>
+            </div>
+
+            <!-- Alumni Registration Form -->
+            <div class="studentreg-form" style="display: none;">
+                <h2>ALUMNI REGISTRATION FORM</h2>
+
+                <form class="contain">
+                    <div class="input-group">
+                        <div class="inputfield">
+                            <label for="fullname">Full Name:</label>
+                            <input type="text" placeholder="Full Name">
+
+                            <label for="gsuit">Email Address:</label>
+                            <input type="email" placeholder="example@gmail.com">
+
+                            <label for="program">Student Number:</label>
+                            <input type="text" placeholder="202320046">
+
+                            <label for="studentnum">Year Graduated:</label>
+                            <input type="text" placeholder="eg. 2024-2025">
+
+                            <label for="uploadproof" class="override-txt">Upload proof of credential that you graduate
+                                at BTECH</label>
+                            <div class="upload-box">
+                                <input type="file" id="uploadproof" accept="image/*" hidden>
+                                <label for="uploadproof" class="upload-label">
+                                    <p>Click <span>here</span> to upload photo!</p>
+                                    <small>No more than 25MB</small>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="inputfield">
+                            <label for="academicyear">Year Graduated:</label>
+                            <input type="text" placeholder="2008-2012">
+
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" placeholder="09123456789">
+
+                            <label for="password">Create Password:</label>
+                            <input type="password" placeholder="Enter Password">
+
+                            <label for="confirmpass">Confirm Password:</label>
+                            <input type="password" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                    <button class="register-btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script
+        src="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\JS Folder\Register Script\changeform.js"></script>
+    <script>
+        function showtab(tab) {
+            // Remove 'active' class from all tabs
+            document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
+            // Add 'active' class to clicked tab
+            document.querySelector(`[onclick="showtab('${tab}')"]`).classList.add('active');
+
+            // Hide all forms
+            document.querySelectorAll('.form').forEach(form => {
+                form.classList.remove('active');
+            });
+
+            // Show the selected form
+            document.getElementById(`${tab}-form`).classList.add('active');
+        }
+
+    </script>
+</body>
+
+</html>

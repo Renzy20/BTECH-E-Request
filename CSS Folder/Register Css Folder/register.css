@@ -1,0 +1,230 @@
+body {
+    padding: 0;
+    margin: 0;
+
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('C:/Users/Administrator/OneDrive/Documents/BTECH-E-Request/img/e-requestBG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 1;
+}
+
+.logo-size {
+    height: 80px;
+    width: 80px;
+}
+
+.txt-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100px;
+}
+
+p {
+    width: 200px;
+    color: beige;
+    text-align: left, center;
+    font-size: 12px;
+    margin: 0;
+}
+
+.container {
+    height: 70vh;
+    width: 70%;
+
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.person-section {
+    height: 120%;
+    width: 20%;
+
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgba(161, 167, 167, 0.3);
+}
+
+.personregister-form {
+    height: 120%;
+    width: 80%;
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(223, 230, 230);
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.group-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    width: 170px;
+
+    margin: 20px;
+}
+
+.tab.active {
+    color: rgb(255, 255, 255);
+    border-left: 3px solid #FFC000;
+}
+
+/* Student Registration Form */
+.studentreg-form {
+    flex: 1;
+    padding: 30px;
+    width: 70%;
+    border-radius: 15px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Form Grid */
+.contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.inputfield {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Birth Date Fields */
+.birth-fields {
+    display: flex;
+    gap: 20px;
+}
+
+.birth-fields input {
+    width: 32%;
+}
+
+/* Register Button */
+.register-btn {
+    width: 50%;
+    padding: 10px;
+    background: green;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background: darkgreen;
+}
+
+.override-txt {
+    width: 200%;
+    text-align: center;
+}
+
+small {
+    text-align: center;
+}
+
+.upload-box {
+    width: 200%;
+    height: 100px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fff0;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    transition: 0.3s;
+    margin: 0;
+    padding: 0;
+}
+
+.upload-box:hover {
+    border-color: green;
+}
+
+.upload-label p {
+    font-size: 16px;
+    color: black;
+}
+
+.upload-label span {
+    color: green;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.upload-label small {
+    display: block;
+    color: gray;
+    margin-top: 5px;
+}
