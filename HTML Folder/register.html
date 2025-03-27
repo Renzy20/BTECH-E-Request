@@ -28,7 +28,7 @@
             <div class="group-form">
                 <button class="tab active" onclick="showtab('student')">Student</button>
                 <button class="tab" onclick="showtab('alumni')">Alumni</button>
-                <button>Staff</button>
+                <button class="tab" onclick="showtab('staff')">Staff</button>
             </div>
         </div>
 
@@ -89,7 +89,7 @@
             <div class="studentreg-form" style="display: none;">
                 <h2>ALUMNI REGISTRATION FORM</h2>
 
-                <form class="contain">
+                <form class="contain" id="alumni-form">
                     <div class="input-group">
                         <div class="inputfield">
                             <label for="fullname">Full Name:</label>
@@ -132,26 +132,98 @@
                     <button class="register-btn">Register</button>
                 </form>
             </div>
+
+            <!-- Section for Admin/Staff Form -->
+            <div class="studentreg-form" id="staff-form" style="display: none;">
+                <h2>STAFF REGISTRATION FORM</h2>
+
+                <form class="contains" onsubmit="return checkSecurityCode(event)">
+                    <div class="input-groups">
+                        <div class="inputfields">
+                            <label for="admin-code" class="labels">Admin Code:</label>
+                            <input type="password" placeholder="Code here" class="inputs" id="admin-code">
+
+                            <label for="confirm-code" class="labels">Confirm Code:</label>
+                            <input type="password" placeholder="Code here" class="inputs" id="confirm-code">
+                        </div>
+                    </div>
+
+                    <!-- Error Message -->
+                    <p id="error-message" style="color: red; display: none;">Incorrect code. Try again.</p>
+                    <div class="center">
+                        <button class="register-bttn">Register</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Next Form for Staff Registration -->
+            <div class="studentreg-form" id="next-form" style="display: none;">
+                <h2>STAFF REGISTRATION FORM</h2>
+
+                <form class="contain">
+                    <div class="input-group">
+                        <div class="inputfield">
+                            <label for="fullname">Full Name:</label>
+                            <input type="text" id="fullname" placeholder="Full Name">
+
+                            <label for="gsuit">Email Address:</label>
+                            <input type="email" id="gsuit" placeholder="example@btech.ph.education">
+
+                            <label for="work">Work Obligation:</label>
+                            <input type="text" id="work" placeholder="Office Staff">
+                        </div>
+
+                        <div class="inputfield">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" placeholder="09123456789">
+
+                            <label for="password">Create Password:</label>
+                            <input type="password" id="password" placeholder="Enter Password">
+
+                            <label for="confirmpass">Confirm Password:</label>
+                            <input type="password" id="confirmpass" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                    <!-- Fix: Changed type to "button" to prevent automatic form submission -->
+                    <button type="button" class="register-staff-btn">Register</button>
+                </form>
+            </div>
+
+
         </div>
     </div>
     <script
         src="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\JS Folder\Register Script\changeform.js"></script>
     <script src="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\JS Folder\database.js"></script>
+    <script
+        src="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\JS Folder\Register Script\fixedstaffcode.js"></script>
+    <script src="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\JS Folder\staffdatabase.js"></script>
     <script>
         function showtab(tab) {
             // Remove 'active' class from all tabs
             document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
-            // Add 'active' class to clicked tab
-            document.querySelector(`[onclick="showtab('${tab}')"]`).classList.add('active');
+
+            // Find and activate the clicked tab
+            const clickedTab = document.querySelector(`.tab[onclick="showtab('${tab}')"]`);
+            if (clickedTab) {
+                clickedTab.classList.add('active');
+            } else {
+                console.error(`No tab found with onclick="showtab('${tab}')".`);
+            }
 
             // Hide all forms
-            document.querySelectorAll('.form').forEach(form => {
-                form.classList.remove('active');
-            });
+            document.querySelectorAll('.form').forEach(form => form.classList.remove('active'));
 
             // Show the selected form
-            document.getElementById(`${tab}-form`).classList.add('active');
+            const selectedForm = document.getElementById(`${tab}-form`);
+            if (selectedForm) {
+                selectedForm.classList.add('active');
+            } else {
+                console.error(`No form found with ID: ${tab}-form`);
+            }
         }
+
+
     </script>
 </body>
 

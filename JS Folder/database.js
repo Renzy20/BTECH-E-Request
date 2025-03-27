@@ -84,7 +84,7 @@ document.querySelector(".register-btn").addEventListener("click", async function
             document.querySelector("#confirmPassword").value = "";
 
             // Redirect to login page
-            window.location.href = "HTML Folder/login.html";
+            window.location.href = "C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\HTML Folder\login.html";
 
         } else {
             alert(result.error || "Registration failed.");
@@ -95,3 +95,6 @@ document.querySelector(".register-btn").addEventListener("click", async function
         alert("An error occurred. Please try again later.");
     }
 });
+
+
+

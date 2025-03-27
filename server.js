@@ -8,15 +8,15 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// Connect to MongoDB Compass
-mongoose.connect("mongodb://localhost:27017/btech_students", {
+// ✅ Connect to MongoDB Compass
+mongoose.connect("mongodb://localhost:27017/btech_db", {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
 })
     .then(() => console.log("✅ MongoDB Connected"))
     .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
-// Define Student Schema
+// ✅ Student Schema
 const studentSchema = new mongoose.Schema({
     fullname: { type: String, required: true },
     gsuit: { type: String, required: true, unique: true, match: /^[a-zA-Z0-9._%+-]+@btech\.ph\.education$/ },
@@ -27,43 +27,54 @@ const studentSchema = new mongoose.Schema({
     academicyear: { type: String, required: true },
     yearlevel: { type: String, required: true },
     phone: { type: String, required: true },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
 });
 
-// Create Student Model
-const Student = mongoose.model("Student", studentSchema);
+// ✅ Staff Schema
+const staffSchema = new mongoose.Schema({
+    fullname: { type: String, required: true },
+    email: { type: String, required: true, unique: true, match: /^[a-zA-Z0-9._%+-]+@btech\.ph$/ },
+    work: { type: String, required: true },
+    phone: { type: String, required: true },
+    password: { type: String, required: true },
+});
 
-// 🔹 Register API
-app.post("/register", async (req, res) => {
+// ✅ Create Models
+const Student = mongoose.model("Student", studentSchema);
+const Staff = mongoose.model("Staff", staffSchema);
+
+// ✅ Helper Function for Input Validation
+const validateFields = (fields) => {
+    return Object.values(fields).every(field => field && field.trim() !== "");
+};
+
+// 📌 STUDENT REGISTRATION
+app.post("/register-student", async (req, res) => {
     try {
         const { fullname, gsuit, program, studentnum, address, birthdate, academicyear, yearlevel, phone, password } = req.body;
 
-        // Check if all fields are filled
-        if (!fullname || !gsuit || !program || !studentnum || !address || !birthdate || !academicyear || !yearlevel || !phone || !password) {
+        // Validate required fields
+        if (!validateFields({ fullname, gsuit, program, studentnum, address, academicyear, yearlevel, phone, password })) {
             return res.status(400).json({ error: "All fields are required." });
         }
 
-        // Validate G-Suite email format
+        // Validate email format
         if (!/^[a-zA-Z0-9._%+-]+@btech\.ph\.education$/.test(gsuit)) {
             return res.status(400).json({ error: "Invalid G-Suite email format. Must be '@btech.ph.education'." });
         }
 
-        // Check if student already exists
-        const existingStudent = await Student.findOne({ gsuit });
-        if (existingStudent) {
+        // Check if student exists
+        if (await Student.findOne({ gsuit })) {
             return res.status(400).json({ error: "Email is already registered." });
         }
 
-        // Hash password before saving
+        // Hash password
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Save new student
-        const newStudent = new Student({
-            fullname, gsuit, program, studentnum, address, birthdate, academicyear, yearlevel, phone,
-            password: hashedPassword // Store hashed password
-        });
-
+        // Save student to DB
+        const newStudent = new Student({ fullname, gsuit, program, studentnum, address, birthdate, academicyear, yearlevel, phone, password: hashedPassword });
         await newStudent.save();
+
         res.status(201).json({ message: "Student registered successfully!" });
 
     } catch (error) {
@@ -72,29 +83,69 @@ app.post("/register", async (req, res) => {
     }
 });
 
-// 🔹 Login API
+// 📌 STAFF REGISTRATION
+app.post("/register-staff", async (req, res) => {
+    try {
+        console.log("📩 Received data:", req.body); // Debugging
+
+        const { fullname, email, work, phone, password } = req.body;
+
+        // Validate required fields
+        if (!fullname || !email || !work || !phone || !password) {
+            return res.status(400).json({ error: "All fields are required." });
+        }
+
+        // Validate email format
+        if (!/^[a-zA-Z0-9._%+-]+@btech\.ph$/.test(email)) {
+            return res.status(400).json({ error: "Invalid Staff email format. Must be '@btech.ph'." });
+        }
+
+        // Check if staff exists
+        const existingStaff = await Staff.findOne({ email });
+        if (existingStaff) {
+            return res.status(400).json({ error: "Email is already registered." });
+        }
+
+        // Hash password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Save staff to DB
+        const newStaff = new Staff({ fullname, email, work, phone, password: hashedPassword });
+        await newStaff.save();
+
+        res.status(201).json({ message: "Staff registered successfully!" });
+
+    } catch (error) {
+        console.error("❌ Staff Registration Error:", error);
+        res.status(500).json({ error: "Error registering staff." });
+    }
+});
+
+
+// 📌 LOGIN API (For Both Students and Staff)
 app.post("/login", async (req, res) => {
     try {
-        const { gsuit, password } = req.body;
+        const { email, password } = req.body;
 
-        // Check if both email and password are provided
-        if (!gsuit || !password) {
+        // Validate input
+        if (!email || !password) {
             return res.status(400).json({ error: "Please enter both email and password." });
         }
 
-        // Find user by email
-        const student = await Student.findOne({ gsuit });
-        if (!student) {
+        // Check if user exists in both collections
+        const user = await Student.findOne({ gsuit: email }) || await Staff.findOne({ email });
+
+        if (!user) {
             return res.status(400).json({ error: "Invalid email or password." });
         }
 
-        // Compare hashed password
-        const isMatch = await bcrypt.compare(password, student.password);
+        // Compare passwords
+        const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(400).json({ error: "Invalid email or password." });
         }
 
-        res.json({ message: "Login successful!" });
+        res.json({ message: "Login successful!", userType: user.gsuit ? "Student" : "Staff" });
 
     } catch (error) {
         console.error("❌ Login Error:", error);
@@ -102,7 +153,8 @@ app.post("/login", async (req, res) => {
     }
 });
 
-// Start Server
-app.listen(5000, () => {
-    console.log("🚀 Server running on port 5000");
+// ✅ Start Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
 });

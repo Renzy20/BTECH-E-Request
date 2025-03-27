@@ -228,3 +228,82 @@ small {
     color: gray;
     margin-top: 5px;
 }
+
+/* Admin Style Form */
+
+.contains {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.input-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inputfields {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.labels {
+    margin: 0;
+}
+
+.inputs {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.register-bttn {
+    background-color: green;
+    color: white;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.register-bttn:hover {
+    background-color: darkgreen;
+}
+
+.register-staff-btn {
+    background-color: green;
+    color: white;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.register-staff-btn:hover {
+    background-color: darkgreen;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+}
