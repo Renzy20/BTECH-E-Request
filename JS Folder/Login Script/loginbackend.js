@@ -20,7 +20,7 @@ document.querySelector(".login-btn").addEventListener("click", async function (e
 
         if (response.ok) {
             alert(result.message);
-            window.location.href = "dashboard.html"; // Redirect to dashboard
+            window.location.href = "../HTML Folder/studentdashboard.html"; // Redirect to dashboard
         } else {
             alert(result.error);
         }
