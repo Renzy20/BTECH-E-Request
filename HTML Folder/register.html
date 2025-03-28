@@ -41,47 +41,47 @@
                     <div class="input-group">
                         <div class="inputfield">
                             <label for="fullname">Full Name:</label>
-                            <input type="text" placeholder="Full Name">
+                            <input type="text" id="fullname" placeholder="Full Name">
 
                             <label for="gsuit">Gsuit Account:</label>
-                            <input type="email" placeholder="studentnumber@btech.ph.education">
+                            <input type="email" id="gsuit" placeholder="studentnumber@btech.ph.education">
 
                             <label for="program">Program Course:</label>
-                            <input type="text" placeholder="Course Name">
+                            <input type="text" id="program" placeholder="Course Name">
 
                             <label for="studentnum">Student Number:</label>
-                            <input type="text" placeholder="12345678">
+                            <input type="text" id="studentnum" placeholder="12345678">
 
                             <label for="address">Address & Zip Code:</label>
-                            <input type="text" placeholder="City, Zip Code">
+                            <input type="text" id="address" placeholder="City, Zip Code">
 
                             <label for="birthdate">Birth Date:</label>
                             <div class="birth-fields">
-                                <input type="text" placeholder="Month">
-                                <input type="text" placeholder="Day">
-                                <input type="text" placeholder="Year">
+                                <input type="text" id="birthMonth" placeholder="Month">
+                                <input type="text" id="birthDay" placeholder="Day">
+                                <input type="text" id="birthYear" placeholder="Year">
                             </div>
                         </div>
 
                         <div class="inputfield">
                             <label for="academicyear">A.Y:</label>
-                            <input type="text" placeholder="2008-2012">
+                            <input type="text" id="academicyear" placeholder="2008-2012">
 
                             <label for="yearlevel">Year Level:</label>
-                            <input type="text" placeholder="e.g. 1st Year">
+                            <input type="text" id="yearlevel" placeholder="e.g. 1st Year">
 
                             <label for="phone">Phone Number:</label>
-                            <input type="tel" placeholder="09123456789">
+                            <input type="tel" id="phone" placeholder="09123456789">
 
                             <label for="password">Create Password:</label>
-                            <input type="password" placeholder="Enter Password">
+                            <input type="password" id="password" placeholder="Enter Password">
 
                             <label for="confirmpass">Confirm Password:</label>
-                            <input type="password" placeholder="Confirm Password">
+                            <input type="password" id="confirmPassword" placeholder="Confirm Password">
                         </div>
                     </div>
 
-                    <button class="register-btn">Register</button>
+                    <button type="submit" class="register-btn">Register</button>
                 </form>
             </div>
 
@@ -137,7 +137,7 @@
             <div class="studentreg-form" id="staff-form" style="display: none;">
                 <h2>STAFF REGISTRATION FORM</h2>
 
-                <form class="contains" onsubmit="return checkSecurityCode(event)">
+                <form class="contains" onsubmit="return checkSecurityCode(event)" id="staff">
                     <div class="input-groups">
                         <div class="inputfields">
                             <label for="admin-code" class="labels">Admin Code:</label>
@@ -164,24 +164,24 @@
                     <div class="input-group">
                         <div class="inputfield">
                             <label for="fullname">Full Name:</label>
-                            <input type="text" id="fullname" placeholder="Full Name">
+                            <input type="text" id="fullnamee" placeholder="Full Name">
 
                             <label for="gsuit">Email Address:</label>
-                            <input type="email" id="gsuit" placeholder="example@btech.ph.education">
+                            <input type="email" id="gsuitt" placeholder="example@btech.ph.education">
 
                             <label for="work">Work Obligation:</label>
-                            <input type="text" id="work" placeholder="Office Staff">
+                            <input type="text" id="workk" placeholder="Office Staff">
                         </div>
 
                         <div class="inputfield">
                             <label for="phone">Phone Number:</label>
-                            <input type="tel" id="phone" placeholder="09123456789">
+                            <input type="tel" id="phonee" placeholder="09123456789">
 
                             <label for="password">Create Password:</label>
-                            <input type="password" id="password" placeholder="Enter Password">
+                            <input type="password" id="passwordd" placeholder="Enter Password">
 
                             <label for="confirmpass">Confirm Password:</label>
-                            <input type="password" id="confirmpass" placeholder="Confirm Password">
+                            <input type="password" id="confirmpasss" placeholder="Confirm Password">
                         </div>
                     </div>
                     <!-- Fix: Changed type to "button" to prevent automatic form submission -->
@@ -192,12 +192,10 @@
 
         </div>
     </div>
-    <script
-        src="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\JS Folder\Register Script\changeform.js"></script>
-    <script src="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\JS Folder\database.js"></script>
-    <script
-        src="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\JS Folder\Register Script\fixedstaffcode.js"></script>
-    <script src="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\JS Folder\staffdatabase.js"></script>
+    <script src="../JS Folder/Register Script/changeform.js"></script>
+    <script src="../JS Folder/database.js"></script>
+    <script src="../JS Folder/Register Script/fixedstaffcode.js"></script>
+    <script src="../JS Folder/staffdatabase.js"></script>
     <script>
         function showtab(tab) {
             // Remove 'active' class from all tabs

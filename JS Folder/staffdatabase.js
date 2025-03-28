@@ -3,44 +3,44 @@ document.querySelector(".register-staff-btn").addEventListener("click", async fu
     event.preventDefault(); // Prevent page reload
 
     // Get all input fields
-    const fullname = document.getElementById("fullname");
-    const gsuit = document.getElementById("gsuit");
-    const work = document.getElementById("work");
-    const phone = document.getElementById("phone");
-    const password = document.getElementById("password");
-    const confirmPassword = document.getElementById("confirmpass");
+    const fullnamee = document.querySelector("#fullnamee");
+    const gsuitt = document.querySelector("#gsuitt");
+    const workk = document.querySelector("#workk");
+    const phonee = document.querySelector("#phonee");
+    const passwordd = document.querySelector("#passwordd");
+    const confirmPasswordd = document.querySelector("#confirmpasss");
 
     // Check if any required field is empty
-    if (!fullname.value || !gsuit.value || !work.value || !phone.value || !password.value || !confirmPassword.value) {
+    if (!fullnamee.value || !gsuitt.value || !workk.value || !phonee.value || !passwordd.value || !confirmPasswordd.value) {
         alert("Please fill in all the fields before submitting.");
         return;
     }
 
     // Check if email ends with @btech.ph.education
-    if (!gsuit.value.endsWith("@btech.ph.education")) {
+    if (!gsuitt.value.endsWith("@btech.ph.education")) {
         alert("Please enter a valid email ending with '@btech.ph.education'.");
         return;
     }
 
     // Validate phone number (PH format: 11 digits starting with 09)
-    if (!/^09\d{9}$/.test(phone.value)) {
+    if (!/^09\d{9}$/.test(phonee.value)) {
         alert("Invalid phone number format! It should start with '09' and have 11 digits.");
         return;
     }
 
     // Check if passwords match
-    if (password.value !== confirmPassword.value) {
+    if (passwordd.value !== confirmPasswordd.value) {
         alert("Passwords do not match. Please try again.");
         return;
     }
 
     // Data to be sent to the server
     const data = {
-        fullname: fullname.value,
-        gsuit: gsuit.value,
-        work: work.value,
-        phone: phone.value,
-        password: password.value
+        fullname: fullnamee.value,
+        gsuit: gsuitt.value,
+        work: workk.value,
+        phone: phonee.value,
+        password: passwordd.value
     };
 
     try {
@@ -56,15 +56,15 @@ document.querySelector(".register-staff-btn").addEventListener("click", async fu
             alert(result.message);
 
             // Reset all input fields after successful registration
-            fullname.value = "";
-            gsuit.value = "";
-            work.value = "";
-            phone.value = "";
-            password.value = "";
-            confirmPassword.value = "";
+            fullnamee.value = "";
+            gsuitt.value = "";
+            workk.value = "";
+            phonee.value = "";
+            passwordd.value = "";
+            confirmPasswordd.value = "";
 
             // Redirect to login page
-            window.location.href = "C:/Users/Administrator/OneDrive/Documents/BTECH-E-Request/HTML Folder/login.html";
+            window.location.href = "../HTML Folder/login.html";
         } else {
             alert(result.error || "Registration failed.");
         }

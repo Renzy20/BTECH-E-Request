@@ -9,10 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // ✅ Connect to MongoDB Compass
-mongoose.connect("mongodb://localhost:27017/btech_db", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect("mongodb://localhost:27017/btech_db")
     .then(() => console.log("✅ MongoDB Connected"))
     .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
@@ -33,7 +30,7 @@ const studentSchema = new mongoose.Schema({
 // ✅ Staff Schema
 const staffSchema = new mongoose.Schema({
     fullname: { type: String, required: true },
-    email: { type: String, required: true, unique: true, match: /^[a-zA-Z0-9._%+-]+@btech\.ph$/ },
+    gsuit: { type: String, required: true, unique: true, match: /^[a-zA-Z]+@btech\.ph\.education$/ },
     work: { type: String, required: true },
     phone: { type: String, required: true },
     password: { type: String, required: true },
@@ -83,25 +80,25 @@ app.post("/register-student", async (req, res) => {
     }
 });
 
-// 📌 STAFF REGISTRATION
+// 📌 STAFF REGISTRATION (Fixed)
 app.post("/register-staff", async (req, res) => {
     try {
         console.log("📩 Received data:", req.body); // Debugging
 
-        const { fullname, email, work, phone, password } = req.body;
+        const { fullname, gsuit, work, phone, password } = req.body;
 
         // Validate required fields
-        if (!fullname || !email || !work || !phone || !password) {
+        if (!validateFields({ fullname, gsuit, work, phone, password })) {
             return res.status(400).json({ error: "All fields are required." });
         }
 
         // Validate email format
-        if (!/^[a-zA-Z0-9._%+-]+@btech\.ph$/.test(email)) {
+        if (!/^[a-zA-Z]+@btech\.ph\.education$/.test(gsuit)) {
             return res.status(400).json({ error: "Invalid Staff email format. Must be '@btech.ph'." });
         }
 
         // Check if staff exists
-        const existingStaff = await Staff.findOne({ email });
+        const existingStaff = await Staff.findOne({ gsuit });
         if (existingStaff) {
             return res.status(400).json({ error: "Email is already registered." });
         }
@@ -110,7 +107,7 @@ app.post("/register-staff", async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
 
         // Save staff to DB
-        const newStaff = new Staff({ fullname, email, work, phone, password: hashedPassword });
+        const newStaff = new Staff({ fullname, gsuit, work, phone, password: hashedPassword });
         await newStaff.save();
 
         res.status(201).json({ message: "Staff registered successfully!" });
@@ -121,19 +118,29 @@ app.post("/register-staff", async (req, res) => {
     }
 });
 
-
 // 📌 LOGIN API (For Both Students and Staff)
 app.post("/login", async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { gsuit, password } = req.body;
 
         // Validate input
-        if (!email || !password) {
+        if (!validateFields({ gsuit, password })) {
             return res.status(400).json({ error: "Please enter both email and password." });
         }
 
-        // Check if user exists in both collections
-        const user = await Student.findOne({ gsuit: email }) || await Staff.findOne({ email });
+        let user;
+        let userType;
+
+        // Check if the user is a Student (Student numbers only)
+        if (/^\d+@btech\.ph\.education$/.test(gsuit)) {
+            user = await Student.findOne({ gsuit });
+            userType = "Student";
+        }
+        // Check if the user is a Staff (Names only)
+        else if (/^[a-zA-Z]+@btech\.ph\.education$/.test(gsuit)) {
+            user = await Staff.findOne({ gsuit });
+            userType = "Staff";
+        }
 
         if (!user) {
             return res.status(400).json({ error: "Invalid email or password." });
@@ -145,7 +152,7 @@ app.post("/login", async (req, res) => {
             return res.status(400).json({ error: "Invalid email or password." });
         }
 
-        res.json({ message: "Login successful!", userType: user.gsuit ? "Student" : "Staff" });
+        res.json({ message: "Login successful!", userType });
 
     } catch (error) {
         console.error("❌ Login Error:", error);
