@@ -18,7 +18,7 @@ body {
     height: 99.5vh;
     width: 80%;
 
-    background-color: beige;
+    background-color: #F6FFF1;
 
     display: flex;
     justify-content: flex-start;
@@ -111,7 +111,7 @@ body {
 
     width: 200px;
     font-size: 18px;
-    background-color: beige;
+    background-color: #F6FFF1;
 
     border: none;
     cursor: pointer;
@@ -144,6 +144,8 @@ body {
 .containers {
     height: 100%;
     width: 80%;
+
+    border: 1px solid #FEC001;
 
     justify-items: center;
     align-items: center;
@@ -352,4 +354,76 @@ body {
     position: fixed;
     bottom: 1%;
     left: 27.3%;
+}
+
+.student-documents-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 5%;
+    width: 90%;
+    margin-top: 30px;
+}
+
+.student-doc-text {
+    text-align: left;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.std-docu-container {
+    height: 70%;
+    width: 90%;
+
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.stud-document-container {
+    height: 50%;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.docu-containers {
+    width: 35%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.documents-img {
+    height: 100px;
+    width: 100px;
+}
+
+.docu-text {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+
+    margin-top: 10px;
+}
+
+.select-documents-bttn {
+    height: 32px;
+    width: 150px;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #2EC238;
+    cursor: pointer;
+
+    border-radius: 20px;
+    border: none;
+
+    margin-top: 30px;
 }
