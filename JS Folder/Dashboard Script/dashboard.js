@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('dashboardBttn')?.addEventListener('click', () => showSection('dashboardSection'));
     document.getElementById('documentBttn')?.addEventListener('click', () => showSection('documentSection'));
     document.getElementById('historyBttn')?.addEventListener('click', () => showSection('historySection'));
+    document.getElementById('requestBttn')?.addEventListener('click', () => showSection('requestFormSection'));
 
     // Default view
     document.getElementById('dashboardBttn')?.click();
