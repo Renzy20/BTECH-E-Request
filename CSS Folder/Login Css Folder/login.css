@@ -79,8 +79,8 @@ h3 {
 
     background-color: #F5F5F5;
     box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
-    padding: 40px;
-    width: 100%;
+    padding: 25px;
+    width: 108.5%;
     text-align: center;
 }
 
@@ -161,6 +161,17 @@ input {
 }
 
 .login-btn {
+    width: 80%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.login-bttn {
     width: 80%;
     padding: 10px;
     background-color: #4CAF50;
