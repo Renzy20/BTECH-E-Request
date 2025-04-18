@@ -20,7 +20,7 @@
             <div class="profile-container">
                 <img src="../img/profile.png" alt="profile" class="profile-pic">
                 <h3>Jaycenth Dela Cruz</h3>
-                <p class="student-subtext">Student</p>
+                <p class="student-subtext">Alumni</p>
             </div>
 
             <div class="nav-container">
@@ -39,7 +39,7 @@
                     Request History
                 </button>
 
-                <button class="doc-bttn"><img src="../img/userprofile_icon.png" alt="userprofile_icon"
+                <button class="doc-bttn" id="profileBttn"><img src="../img/userprofile_icon.png" alt="userprofile_icon"
                         class="docu_icon">
                     Profile
                 </button>
@@ -321,15 +321,107 @@
 
                 </div>
 
-                <div class="submit-btn"><button class="submit-bttn">Submit</button></div>
+                <div class="submit-btn"><button class="submit-bttn" onclick="openModal()">Submit</button></div>
 
                 <h5 class="footer-text">BTECH Website | © Copyright 2025 Baliwag Polytechnic College | Document Request
                     System</h5>
             </div>
 
             <!-- Profile -->
+            <div class="containers" style="display: none;" id="profileSection">
+                <p class="text-header">BALIWAG POLYTECHNIC COLLEGES DOCUMENT REQUEST SYSTEM</p>
 
-            <!-- Settings -->
+                <div class="profilexnamexstudentnumber">
+                    <div class="boxes">
+                        <img src="../img/profile.png" class="studentProfile">
+                    </div>
+
+                    <div class="boxxes">
+                        <div>
+                            <p class="display-Flex">Juan Dela Cruz</p>
+                            <p class="display-Flexx">Student Number: 123456789</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formApp-container">
+                    <div class="formApp-tabs">
+                        <div class="formApp-tab active" id="personalTab" onclick="switchTab('personal')">Personal</div>
+                        <div class="formApp-tab" id="educationalTab" onclick="switchTab('educational')">Educational
+                        </div>
+                    </div>
+
+                    <div class="formApp-content" id="personalForm">
+                        <div class="formApp-group">
+                            <label>Surname</label><input type="text">
+                        </div>
+                        <div class="formApp-group">
+                            <label>First Name</label><input type="text">
+                        </div>
+                        <div class="formApp-group">
+                            <label>Middle Name</label><input type="text">
+                        </div>
+                        <div class="formApp-group">
+                            <label>Date of Birth</label><input type="date">
+                        </div>
+                        <div class="formApp-group">
+                            <label>Permanent Address</label><input type="text">
+                        </div>
+                        <div class="formApp-group">
+                            <label>Email Address</label><input type="email">
+                        </div>
+                        <div class="formApp-group">
+                            <label>Mobile Number</label><input type="tel">
+                        </div>
+                        <div class="formApp-group">
+                            <label>Phone Number</label><input type="tel">
+                        </div>
+                    </div>
+
+                    <div class="formApp-content formApp-hidden" id="educationalForm">
+                        <div class="formApp-group">
+                            <label>BTECH GSuite</label><input type="text">
+                        </div>
+                        <div class="formApp-group">
+                            <label>Status</label><input type="text">
+                        </div>
+                        <div class="formApp-group">
+                            <label>School Year admitted</label><input type="number">
+                        </div>
+                        <div class="formApp-group">
+                            <label>Admitted as</label><input type="number">
+                        </div>
+                        <div class="formApp-group">
+                            <label>Name of High School graduated from</label><input type="number">
+                        </div>
+                        <div class="formApp-group">
+                            <label>Year Graduated</label><input type="number">
+                        </div>
+                        <div class="formApp-group">
+                            <label>Name of Elementary graduated from</label><input type="number">
+                        </div>
+                        <div class="formApp-group">
+                            <label>Year Graduated</label><input type="number">
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="footer-text">BTECH Website | © Copyright 2025 Baliwag Polytechnic College | Document Request
+                    System</h5>
+            </div>
+
+            <!-- Modal Box -->
+            <div class="modal-overlay" id="confirmationModal">
+                <div class="modal-box">
+                    <h3 class="modal-bg-text">Confirmation</h3>
+                    <p>Once you click “Submit”, you will no longer be able to modify the data you entered from the form.
+                    </p>
+                    <div class="modal-buttons">
+                        <button class="modal-button cancel" onclick="closeModal()">Cancel</button>
+                        <button class="modal-button submit" onclick="confirmSubmit()">Submit</button>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

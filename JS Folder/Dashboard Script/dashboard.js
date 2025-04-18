@@ -53,7 +53,31 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('documentBttn')?.addEventListener('click', () => showSection('documentSection'));
     document.getElementById('historyBttn')?.addEventListener('click', () => showSection('historySection'));
     document.getElementById('requestBttn')?.addEventListener('click', () => showSection('requestFormSection'));
+    document.getElementById('profileBttn')?.addEventListener('click', () => showSection('profileSection'));
 
     // Default view
     document.getElementById('dashboardBttn')?.click();
 });
+
+function switchTab(tabName) {
+    document.getElementById("personalTab").classList.remove("active");
+    document.getElementById("educationalTab").classList.remove("active");
+    document.getElementById(tabName + "Tab").classList.add("active");
+
+    document.getElementById("personalForm").classList.add("formApp-hidden");
+    document.getElementById("educationalForm").classList.add("formApp-hidden");
+    document.getElementById(tabName + "Form").classList.remove("formApp-hidden");
+}
+
+function openModal() {
+    document.getElementById("confirmationModal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("confirmationModal").style.display = "none";
+}
+
+function confirmSubmit() {
+    closeModal();
+    alert("Form submitted successfully!");
+}

@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div class="navbar">
+    <div class="navbar" onclick="backToLoginForm()">
         <img src="C:\Users\Administrator\OneDrive\Documents\BTECH-E-Request\img\BtechLogo.png" class="logo-size">
         <div class="txt-center">
             <p>BTECH ONLINE DOCUMENT REQUEST SYSTEM</p>
@@ -220,6 +220,10 @@
             } else {
                 console.error(`No form found with ID: ${tab}-form`);
             }
+        }
+
+        function backToLoginForm() {
+            window.location.href = '../HTML Folder/login.html'
         }
 
 
