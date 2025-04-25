@@ -20,7 +20,7 @@ document.querySelector(".login-bttn").addEventListener("click", async function (
 
         if (response.ok) {
             alert(result.message);
-            window.location.href = "dashboard.html";
+            window.location.href = "admindashboard.html";
         } else {
             alert(result.error);
         }

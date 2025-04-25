@@ -81,3 +81,8 @@ function confirmSubmit() {
     closeModal();
     alert("Form submitted successfully!");
 }
+
+function goBack() {
+    document.getElementById('requestFormSection').style.display = 'none';
+    document.getElementById('dashboardSection').style.display = 'block';
+}

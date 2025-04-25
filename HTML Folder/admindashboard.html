@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTECH-E-Request</title>
+
+    <link rel="icon" type="image/png" href="../img/btechIcon.png">
+    <link rel="stylesheet" href="../CSS Folder/Dashboard Css Folder/studentdashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="first-container">
+            <img src="../img/btechlogo(1).png" alt="btechlogo" class="btech-logo">
+
+            <div class="profile-container">
+                <img src="../img/adminProfile.png" alt="profile" class="profile-pic">
+                <h3>Renzy Steven Bastes</h3>
+                <p class="student-subtext">Admin</p>
+            </div>
+
+            <div class="nav-container">
+                <button class="doc-bttn" id="dashboardBttn"><img src="../img/dashboard_icon.png" alt="dashboard_icon"
+                        class="dash-icon">
+                    Dashboard
+                </button>
+
+                <button class="doc-bttn" id="historyBttn"><img src="../img/reqhistory_icon.png" alt="reqhistory_icon"
+                        class="docu_icon">
+                    Request History
+                </button>
+
+                <button class="doc-bttn" id="profileBttn"><img src="../img/userprofile_icon.png" alt="userprofile_icon"
+                        class="docu_icon">
+                    Profile
+                </button>
+
+                <button class="doc-bttn"><img src="../img/logout_icon.png" alt="logout_icon" class="docu_icon"><a
+                        href="../HTML Folder/login.html">Logout</a>
+                </button>
+            </div>
+        </div>
+
+        <div class="middle-line"></div>
+
+        <div class="second-container">
+
+            <!-- Dashboard -->
+            <div class="containers" style="display: none;" id="dashboardSection">
+                <p class="text-header">BALIWAG POLYTECHNIC COLLEGES DOCUMENT REQUEST SYSTEM</p>
+
+                <div class="background-container">
+                    <button class="request-bttn" id="requestBttn">View Request</button>
+                </div>
+
+                <div class="dashboard-text">
+                    <p class="doc-text">Announcement</p>
+                </div>
+
+                <div class="container-announcement">
+                    <div class="card">
+                        <div class="card-header">Announcement Title</div>
+                        <div class="card-body">
+                            <p class="announcement">&lt; insert announcement here &gt;</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="admin-info">
+                                <p><strong><em>Admin Name</em></strong></p>
+                                <p class="timestamp">Date, Time of Published</p>
+                            </div>
+                            <div class="actions">
+                                <button class="edit-btn">Edit</button>
+                                <button class="publish-btn" disabled>Publish</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">Announcement Title</div>
+                        <div class="card-body">
+                            <p class="announcement">&lt; insert announcement here &gt;</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="admin-info">
+                                <p><strong><em>Admin Name</em></strong></p>
+                                <p class="timestamp">Date, Time of Published</p>
+                            </div>
+                            <div class="actions">
+                                <button class="edit-btn">Edit</button>
+                                <button class="publish-btn" disabled>Publish</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-announcement">
+                    <div class="card">
+                        <div class="card-header">Announcement Title</div>
+                        <div class="card-body">
+                            <p class="announcement">&lt; insert announcement here &gt;</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="admin-info">
+                                <p><strong><em>Admin Name</em></strong></p>
+                                <p class="timestamp">Date, Time of Published</p>
+                            </div>
+                            <div class="actions">
+                                <button class="edit-btn">Edit</button>
+                                <button class="publish-btn" disabled>Publish</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">Announcement Title</div>
+                        <div class="card-body">
+                            <p class="announcement">&lt; insert announcement here &gt;</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="admin-info">
+                                <p><strong><em>Admin Name</em></strong></p>
+                                <p class="timestamp">Date, Time of Published</p>
+                            </div>
+                            <div class="actions">
+                                <button class="edit-btn">Edit</button>
+                                <button class="publish-btn" disabled>Publish</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="footer-text">BTECH Website | © Copyright 2025 Baliwag Polytechnic College | Document
+                    Request
+                    System</h5>
+            </div>
+
+            <!-- Request History -->
+            <div class="containers" style="display: none;" id="historySection">
+                <p class="text-header">BALIWAG POLYTECHNIC COLLEGES DOCUMENT REQUEST SYSTEM</p>
+
+                <div class="request-history">
+                    <div class="request-history-header">
+                        <p>All Requests</p>
+                        <img src="../img/arrow.png" alt="arrow" class="arrow-png">
+                    </div>
+                    <table class="request-table">
+                        <thead>
+                            <tr>
+                                <th>Request No.</th>
+                                <th>Student Name</th>
+                                <th>Program</th>
+                                <th>Contact No.</th>
+                                <th>BTECH Email</th>
+                                <th>Payment Method</th>
+                                <th>Date Requested</th>
+                                <th>Date Received</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tr-style">
+                                <td>XXXXXXXX</td>
+                                <td>Sanchez, Kyla Mae</td>
+                                <td>BSIT</td>
+                                <td>09xxxxxxxxx</td>
+                                <td>@btech.ph.education</td>
+                                <td>G-Cash</td>
+                                <td>00/00/00</td>
+                                <td>00/00/00</td>
+                                <td><span class="status preparing">Preparing</span></td>
+                            </tr>
+                            <tr class="tr-style">
+                                <td>XXXXXXXX</td>
+                                <td>Mendoza, Jericho Lance</td>
+                                <td>BSIT</td>
+                                <td>09xxxxxxxxx</td>
+                                <td>@btech.ph.education</td>
+                                <td>Maya</td>
+                                <td>00/00/00</td>
+                                <td>00/00/00</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                            <tr class="tr-style">
+                                <td>XXXXXXXX</td>
+                                <td>Pangan, Brian</td>
+                                <td>BSIT</td>
+                                <td>09xxxxxxxxx</td>
+                                <td>@btech.ph.education</td>
+                                <td>G-Cash</td>
+                                <td>00/00/00</td>
+                                <td>00/00/00</td>
+                                <td><span class="status ready">Ready</span></td>
+                            </tr>
+                            <tr class="tr-style">
+                                <td>XXXXXXXX</td>
+                                <td>Dela Cruz, Jaycenth Danlhey</td>
+                                <td>BSIT</td>
+                                <td>09xxxxxxxxx</td>
+                                <td>@btech.ph.education</td>
+                                <td>G-Cash</td>
+                                <td>00/00/00</td>
+                                <td>00/00/00</td>
+                                <td><span class="status received">Received</span></td>
+                            </tr>
+                            <tr class="tr-style">
+                                <td>XXXXXXXX</td>
+                                <td>Bastes, Renzy Steven</td>
+                                <td>BSIT</td>
+                                <td>09xxxxxxxxx</td>
+                                <td>@btech.ph.education</td>
+                                <td>G-Cash</td>
+                                <td>00/00/00</td>
+                                <td>00/00/00</td>
+                                <td><span class="status received">Received</span></td>
+                            </tr>
+                            <tr class="tr-style">
+                                <td>XXXXXXXX</td>
+                                <td>Guibani, Eloisa</td>
+                                <td>BSIT</td>
+                                <td>09xxxxxxxxx</td>
+                                <td>@btech.ph.education</td>
+                                <td>G-Cash</td>
+                                <td>00/00/00</td>
+                                <td>00/00/00</td>
+                                <td><span class="status ready">Ready</span></td>
+                            </tr>
+                            <tr class="tr-style">
+                                <td>XXXXXXXX</td>
+                                <td>Rodrigo, Olivia</td>
+                                <td>BSIT</td>
+                                <td>09xxxxxxxxx</td>
+                                <td>@btech.ph.education</td>
+                                <td>G-Cash</td>
+                                <td>00/00/00</td>
+                                <td>00/00/00</td>
+                                <td><span class="status preparing">Preparing</span></td>
+                            </tr>
+                            <tr class="tr-style">
+                                <td>XXXXXXXX</td>
+                                <td>Silvestre, Wendel</td>
+                                <td>BSIT</td>
+                                <td>09xxxxxxxxx</td>
+                                <td>@btech.ph.education</td>
+                                <td>G-Cash</td>
+                                <td>00/00/00</td>
+                                <td>00/00/00</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                            <tr class="tr-style">
+                                <td>XXXXXXXX</td>
+                                <td>Galang, King</td>
+                                <td>BSIT</td>
+                                <td>09xxxxxxxxx</td>
+                                <td>@btech.ph.education</td>
+                                <td>G-Cash</td>
+                                <td>00/00/00</td>
+                                <td>00/00/00</td>
+                                <td><span class="status ready">Ready</span></td>
+                            </tr>
+                            <tr class="tr-style">
+                                <td>XXXXXXXX</td>
+                                <td>Marcos, John Chester</td>
+                                <td>BSIT</td>
+                                <td>09xxxxxxxxx</td>
+                                <td>@btech.ph.education</td>
+                                <td>G-Cash</td>
+                                <td>00/00/00</td>
+                                <td>00/00/00</td>
+                                <td><span class="status ready">Ready</span></td>
+                            </tr>
+                            <!-- Repeat more rows if needed -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <h5 class="footer-text">BTECH Website | © Copyright 2025 Baliwag Polytechnic College | Document
+                    Request
+                    System</h5>
+            </div>
+
+            <!-- Document Request Summary -->
+            <div class="containers" style="display: none;" id="requestFormSection">
+                <p class="text-header">BALIWAG POLYTECHNIC COLLEGES DOCUMENT REQUEST SYSTEM</p>
+
+                <div class="document-summary">
+                    <div class="summary-header">DOCUMENT REQUEST SUMMARY</div>
+
+                    <div class="summary-content">
+                        <div class="summary-top">
+                            <div class="progress-bar"></div>
+                        </div>
+
+                        <div class="request-info">
+                            <p><strong>Request No.:</strong> XXXXXXXXXX</p>
+                            <p><strong>Date:</strong> 00/00/00</p>
+                        </div>
+
+                        <!-- Student Info -->
+                        <section class="section">
+                            <h3>STUDENT INFORMATION</h3>
+                            <div class="info-grid">
+                                <input type="text" placeholder="Student Number">
+                                <input type="text" placeholder="BTECH GSuite Email">
+                                <input type="text" placeholder="Full Name">
+                                <input type="text" placeholder="Contact No.">
+                                <input type="text" placeholder="Course / Program">
+                                <input type="text" placeholder="Year & Section">
+                            </div>
+                        </section>
+
+                        <!-- Requested Documents -->
+                        <section class="section">
+                            <h3>REQUESTED DOCUMENTS</h3>
+                            <table class="doc-table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Assessment Year</th>
+                                        <th>Semester</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Certificate of Registration (COR)</td>
+                                        <td>A.Y. 202X–202X</td>
+                                        <td>1st Sem</td>
+                                        <td>1</td>
+                                        <td>₱30.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Certificate of Grades (COG)</td>
+                                        <td>A.Y. 202X–202X</td>
+                                        <td>1st Sem</td>
+                                        <td>1</td>
+                                        <td>₱30.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Certificate of Enrollment (COE)</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>1</td>
+                                        <td>₱30.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Transcript of Records (TOR)</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>1</td>
+                                        <td>₱30.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Good Moral Certificate</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>1</td>
+                                        <td>₱30.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="total">
+                                <strong>Total:</strong> <span>₱150.00</span>
+                            </div>
+                        </section>
+
+                        <!-- Payment Details -->
+                        <section class="section">
+                            <h3>PAYMENT DETAILS</h3>
+                            <div class="paymentdetails-container">
+                                <div class="paymentMethod-container">
+                                    <p>Payment Method:<strong> G-Cash</strong></p>
+                                </div>
+                                <div class="paymentMethod-container">
+                                    <p>Sender Name: <strong>Jeon Jungkook</strong></p>
+                                    <p>Reference No.: <strong>xxxx xxxx xxxxxxxx</strong></p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="back-btn">
+                    <button onclick="goBack()">BACK</button>
+                </div>
+
+                <h5 class="footer-text">BTECH Website | © Copyright 2025 Baliwag Polytechnic College | Document Request
+                    System</h5>
+            </div>
+
+
+            <!-- Profile -->
+            <div class="containers" style="display: none;" id="profileSection">
+                <p class="text-header">BALIWAG POLYTECHNIC COLLEGES DOCUMENT REQUEST SYSTEM</p>
+
+                <!-- Admin Profile Section -->
+                <div class="admin-profile">
+                    <div class="profile-image">
+                        <img src="../img/adminProfile.png" alt="Profile" />
+                    </div>
+                    <div class="profile-details">
+                        <h2>Administrator</h2>
+                        <p>BTECH Email: name@btech.ph.education</p>
+                    </div>
+                </div>
+
+                <!-- Form Section -->
+                <div class="form-section">
+                    <div class="tab-header">
+                        <span class="active-tab">Personal</span>
+                    </div>
+
+                    <div class="form-content">
+                        <div class="form-row">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Text" />
+                        </div>
+                        <div class="form-row">
+                            <label>Contact No.</label>
+                            <input type="text" placeholder="Text" />
+                        </div>
+                        <div class="form-row">
+                            <label>BTECH GSuite Email</label>
+                            <input type="text" placeholder="Text" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <h5 class="footer-text">BTECH Website | © Copyright 2025 Baliwag Polytechnic College | Document
+                    Request
+                    System</h5>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../JS Folder/Dashboard Script/dashboard.js"></script>
+</body>
+
+</html>
