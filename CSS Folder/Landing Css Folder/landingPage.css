@@ -1,0 +1,299 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    height: 2402px;
+    background-color: beige;
+}
+
+.container {
+
+    background-image: url('C:/Users/Administrator/OneDrive/Documents/BTECH-E-Request/img/newBtechLogo(1).png');
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: brightness(80%);
+
+    height: 560px;
+    width: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btechLogo-container {
+    height: 100px;
+    width: auto;
+
+    margin-top: 30px;
+
+    /* border: 1px solid gold; */
+}
+
+.btechLogo-size {
+    height: 100px;
+    width: auto;
+
+    padding-left: 80px;
+}
+
+.textAndButton-container {
+    height: 150px;
+    width: auto;
+    padding-left: 90px;
+    margin-bottom: 20px;
+
+    /* border: 1px solid yellow; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.textTitle {
+    color: #fff;
+    font-size: 38px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5),
+        -2px -2px 10px rgba(0, 0, 0, 0.5);
+
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
+
+.request-bttn {
+    width: 250px;
+    height: 50px;
+
+    /* font-size: 22px;
+    font-weight: 500px;
+    color: #fff; */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+
+    background-color: #1F7A0E;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+
+    margin-bottom: 20px;
+}
+
+.a-link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.second-container {
+    height: auto;
+    width: auto;
+
+    /* border: 1px solid gold; */
+    margin: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-description {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6rem;
+    font-weight: 450;
+    width: 80%;
+    text-align: justify;
+
+    margin: 15px;
+}
+
+.third-container {
+    height: 100px;
+    width: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* border: 1px solid violet; */
+}
+
+.loginRegister-container {
+    /* border: 1px solid green; */
+
+    margin: 15px;
+    padding: 20px;
+
+    height: 500px;
+    width: auto;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Log in Container Design */
+
+.work {
+    height: 75vh;
+    width: 20%;
+
+    /* border: 1px solid red; */
+    border-radius: 20px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.work img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.img-z {
+    height: 75vh;
+    width: 100%;
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+
+    background: linear-gradient(rgba(85, 122, 241, 0.6), #213062);
+    border-radius: 10px;
+    cursor: pointer;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: height 0.5s;
+}
+
+.layer a {
+    margin-top: 20px;
+
+    font-size: 38px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+
+    width: 150px;
+    height: 60px;
+    padding-bottom: 20px;
+
+
+    border: none;
+    text-align: center;
+
+    display: flex;
+    align-items: bottom;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.work:hover img {
+    transform: scale(1.3);
+}
+
+.work:hover .layer {
+    height: 100%;
+}
+
+/* Register Container Design */
+
+.works {
+    height: 75vh;
+    width: 20%;
+
+    /* border: 1px solid red; */
+    border-radius: 20px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.works img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.img-sz {
+    height: 75vh;
+    width: 100%;
+}
+
+.layers {
+    width: 100%;
+    height: 0;
+
+    background: linear-gradient(rgba(105, 240, 82, 0.6), #1F7A0E);
+    border-radius: 10px;
+    cursor: pointer;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: height 0.5s;
+}
+
+.layers a {
+    margin-top: 20px;
+
+    font-size: 38px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+
+    width: 150px;
+    height: 60px;
+    padding-bottom: 20px;
+
+
+    border: none;
+    text-align: center;
+
+    display: flex;
+    align-items: bottom;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.works:hover img {
+    transform: scale(1.3);
+}
+
+.works:hover .layers {
+    height: 100%;
+}
