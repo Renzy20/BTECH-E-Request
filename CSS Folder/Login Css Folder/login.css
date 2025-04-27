@@ -74,21 +74,25 @@ h3 {
 .tab-menu {
     display: flex;
     justify-content: space-between;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 
     background-color: #F5F5F5;
     box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
-    padding: 25px;
+
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+
     width: 108.5%;
     text-align: center;
 }
 
 .tab {
     flex: 1;
+    width: 20%;
     border: none;
     background: transparent;
-    padding: 10px;
     font-size: 26px;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
@@ -97,18 +101,22 @@ h3 {
 
 .tab.active {
     color: black;
-    border-bottom: 3px solid #4CAF50;
+    border-bottom: 8px solid #34a720;
 }
 
 .form-container {
     background-color: #fcfcfc;
     box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
-    padding: 40px;
+    /* padding: 40px; */
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
     width: 100%;
     text-align: center;
 
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .form {
@@ -126,7 +134,8 @@ h3 {
 }
 
 label {
-    font-size: 24px;
+    font-size: 18px;
+    font-weight: 650;
     font-family: 'Poppins', sans-serif;
     margin-top: 10px;
 }
@@ -135,6 +144,7 @@ input {
     width: 90%;
     padding: 20px;
     margin-top: 5px;
+    margin-bottom: 5px;
     border: 1px solid #ccc;
     border-radius: 20px;
     font-size: 18px;
@@ -145,7 +155,12 @@ input {
     justify-content: space-between;
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
+
     margin-top: 10px;
+    margin-bottom: 10px;
+
+    /* border: 1px solid gold; */
+    width: 100%;
 }
 
 .links a {
@@ -158,33 +173,48 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .login-btn {
     width: 80%;
-    padding: 10px;
-    background-color: #4CAF50;
+    height: 50px;
+
+    background-color: #1F7A0E;
     color: white;
+    font-size: 18px;
+    font-weight: bold;
+
     border: none;
     border-radius: 20px;
+
     cursor: pointer;
+
     margin-top: 15px;
+    padding: 10px;
 }
 
-.login-bttn {
+.login-button {
     width: 80%;
-    padding: 10px;
-    background-color: #4CAF50;
+    height: 50px;
+
+
+    background-color: #1F7A0E;
     color: white;
+    font-size: 18px;
+    font-weight: bold;
+
     border: none;
     border-radius: 20px;
     cursor: pointer;
+
     margin-top: 15px;
+    padding: 10px;
 }
 
 .left {
     display: flex;
-    justify-content: left;
+    justify-content: center;
 
     width: 60%;
 }
@@ -198,7 +228,7 @@ p {
 
 
 span {
-    color: #4CAF50;
+    color: #1F7A0E;
     cursor: pointer;
 
 }

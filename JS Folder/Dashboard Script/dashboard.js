@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
         historyBttn: {
             default: '../img/reqhistory_icon.png',
             active: '../img/reqhistory_icon_white.png'
+        },
+        profileBttn: {
+            default: '../img/userprofile_icon.png',
+            active: '../img/userprofile_icon_white.png'
         }
     };
 
