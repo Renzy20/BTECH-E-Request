@@ -8,7 +8,7 @@ body {
     height: 140vh;
     width: 100%;
 
-    background-image: url('C:/Users/Administrator/OneDrive/Documents/BTECH-E-Request/img/e-requestBG.png');
+    background-image: url('C:/Users/Administrator/OneDrive/Documents/BTECH-E-Request/img/newBtechLogo(2).png');
     background-repeat: no-repeat;
     background-position: fixed;
     background-size: cover;
@@ -111,6 +111,7 @@ h3 {
     margin: 5px;
     margin-bottom: 10px;
 
+    height: 49px;
     width: 200px;
     font-size: 16px;
     font-weight: bold;
@@ -162,7 +163,7 @@ a {
     height: 100%;
     width: 100%;
 
-    padding: 2px;
+    padding: 20px;
 
     /* border: 1px solid #FEC001; */
 
@@ -208,6 +209,7 @@ a {
     height: 35px;
     width: 125px;
     font-size: 12px;
+    font-weight: bold;
 
     transition: all 0.3s ease;
     cursor: pointer;
@@ -332,7 +334,7 @@ a {
 .requesthistory-text {
     text-align: center;
     color: #fff;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .body-container {
@@ -451,6 +453,7 @@ a {
     height: 35px;
     width: 125px;
     font-size: 12px;
+    font-weight: bold;
 
     color: #fff;
     background-color: #1F7A0E;
@@ -1004,7 +1007,7 @@ input[type="radio"] {
 
 .document-summary {
     background: white;
-    border-radius: 12px;
+    border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     font-family: Arial, sans-serif;
@@ -1016,9 +1019,15 @@ input[type="radio"] {
     background: #1d2e5e;
     color: white;
     text-align: center;
-    padding: 5px;
     font-weight: bold;
     font-size: 1.2rem;
+
+    border-radius: 20px;
+    height: 59px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .summary-top {
@@ -1140,12 +1149,14 @@ input[type="radio"] {
     display: flex;
     align-items: center;
     background: white;
-    padding: 1.2rem 2rem;
+
     border-radius: 16px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    max-width: 600px;
-    width: 100%;
+
+    width: 90%;
+    height: 180px;
     gap: 1.5rem;
+
     border: 1px solid #e0e0e0;
 
     margin-top: 30px;
@@ -1153,10 +1164,13 @@ input[type="radio"] {
 }
 
 .profile-image img {
-    width: 80px;
-    height: 80px;
+    width: auto;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
+
+    margin-top: 7px;
+    margin-left: 30px;
 }
 
 .profile-details h2 {
@@ -1171,15 +1185,16 @@ input[type="radio"] {
 
 .form-section {
     background: white;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-radius: 20px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
+
+    width: 90%;
     overflow: hidden;
 
     margin-top: 30px;
     margin-bottom: 30px;
+
+    /* border: 2px solid black; */
 }
 
 .tab-header {
@@ -1188,6 +1203,8 @@ input[type="radio"] {
     padding: 1rem 0;
     font-weight: bold;
     position: relative;
+
+    /* border: 2px solid black; */
 }
 
 .active-tab {
@@ -1213,6 +1230,8 @@ input[type="radio"] {
     border-radius: 20px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     gap: 1.2rem;
+
+    /* border: 2px solid black; */
 }
 
 .form-row {
@@ -1233,4 +1252,8 @@ input[type="radio"] {
     border: 1px solid #e2e2e2;
     background-color: #f4f4f4;
     outline: none;
+}
+
+.date-input {
+    width: 110px;
 }

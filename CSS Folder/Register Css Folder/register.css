@@ -4,7 +4,7 @@ body {
 
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-    background-image: url('C:/Users/Administrator/OneDrive/Documents/BTECH-E-Request/img/e-requestBG.png');
+    background-image: url('C:/Users/Administrator/OneDrive/Documents/BTECH-E-Request/img/newBtechLogo(2).png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -25,8 +25,10 @@ body {
 }
 
 .logo-size {
+    margin-top: 10px;
+    margin-left: 5px;
     height: 80px;
-    width: 80px;
+    width: auto;
 }
 
 .txt-center {
@@ -72,7 +74,7 @@ p {
 
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    background-color: rgb(223, 230, 230);
+    background-color: #eeeff3;
 
     display: flex;
     justify-content: center;
@@ -101,7 +103,7 @@ button {
 
 .tab.active {
     color: rgb(255, 255, 255);
-    border-left: 3px solid #FFC000;
+    border-left: 8px solid #FFC000;
 }
 
 /* Student Registration Form */
@@ -206,7 +208,7 @@ small {
     align-items: center;
     justify-content: center;
 
-    background: #f8fff0;
+    background: #eeeff3;
     cursor: pointer;
     text-align: center;
 
